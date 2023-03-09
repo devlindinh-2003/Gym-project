@@ -1,70 +1,476 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="ocean">
-      <div class="wave"></div>
-      <div class="wave"></div>
-  </div>
-  <!-- Log In Form Section -->
-  <section>
-      <div class="container" id="container">
-          <div class="form-container sign-up-container">
-              <form action="#">
-                  <h1>Sign Up</h1>
-                  
-               
-                  <label>
-                      <input type="text" placeholder="Name"/>
-                  </label>
-                  <label>
-                      <input type="email" placeholder="Email"/>
-                  </label>
-                  <label>
-                      <input type="password" placeholder="Password"/>
-                  </label>
-                  <button class="btn-signup" style="margin-top: 9px">Sign Up</button>
-              </form>
-          </div>
-          <div class="form-container sign-in-container">
-              <form action="#">
-                  <h1>Sign in</h1>
-                  
-                 
-                  <label>
-                      <input type="email" placeholder="Email"/>
-                  </label>
-                  <label>
-                      <input type="password" placeholder="Password"/>
-                  </label>
-                  <!-- <a href="#">Forgot your password?</a> -->
-                  <button class="btn-signin">Sign In</button>
-              </form>
-          </div>
-          <div class="overlay-container">
-              <div class="overlay">
-                  <div class="overlay-panel overlay-left">
-                      <h1>Log in</h1>
-                      <p>Sign in here if you already have an account </p>
-                      <button class="ghost mt-5 btn-signin" id="signIn" >Sign In</button>
-                  </div>
-                  <div class="overlay-panel overlay-right">
-                      <h1>Create, Account!</h1>
-                      <p>Sign up if you still don't have an account ... </p>
-                      <button class="ghost btn-signup" id="signUp">Sign Up</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js'></script>
-    <script src="script.js"></script>
-  </body>
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    
+    <!--====== Title ======-->
+    <title>MosquitoGym - Gym Website</title>
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+        
+    <!--====== Magnific Popup CSS ======-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        
+    <!--====== Slick CSS ======-->
+    <link rel="stylesheet" href="assets/css/slick.css">
+        
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css">
+        
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.4.5.2.min.css">
+    
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+    
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+</head>
+
+
+<body>
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+    <!--====== PRELOADER PART START ======-->
+
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====== PRELOADER PART ENDS ======-->
+
+        <!--====== HEADER PART START ======-->
+
+        <header class="header-area">
+            <div class="navbar-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand header-logo" href="index.html">
+                                    <img style="width: 100px; height: 100px;" src="images/logo.png" alt="Logo">
+                                    <p>Mosquito Gym</p>
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    
+                                </button>
+    
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                    <ul id="nav" class="navbar-nav ml-auto">
+                                        <li class="nav-item active">
+                                            <a class="page-scroll" href="index.html">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="page-scroll" href="#activities">Activities</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="page-scroll" href="#about">About</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="page-scroll" href="#membership">Membership</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="page-scroll" href="#product">Products</a>
+                                        </li>
+                                       
+                                    </ul>
+                                    <ul>
+                                        <li class="nav-item">
+                                        <a style="text-decoration: none; font-weight: bold; color: black;margin-left: 100px;" href="signin.html">SIGNIN/SIGNUP</a> 
+                                    </li>
+                                </ul>
+                                </div> <!-- navbar collapse -->
+                            </nav> <!-- navbar -->
+                        </div>
+                    </div> <!-- row -->
+                </div> <!-- container -->
+            </div> <!-- navbar area -->
+    
+      
+        </header>
+    
+        <!--====== HEADER PART ENDS ======-->
+    
+    <!--====== COURSES PART START ======-->
+    
+    <section id="courses" class="courses_area pt-105">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="section_title text-center pb-25">
+                        <span class="line"></span>
+                        <h3 class="title">Our Courses</h3>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="single_courses mt-30">
+                        <img src="assets/images/courses-1.jpg" alt="courses">
+                        <h4 class="title"><a href="javascript:void(0)">Fitness</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consetetur thedn bsadipscing elitr, sedsd diam nonumy eirmod tempor invidunt ut labore.</p>
+                    </div> <!-- single courses -->
+                </div>
+                <div class="col-md-4">
+                    <div class="single_courses mt-30">
+                        <img src="assets/images/courses-2.jpg" alt="courses">
+                        <h4 class="title"><a href="javascript:void(0)">Body Building</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consetetur thedn bsadipscing elitr, sedsd diam nonumy eirmod tempor invidunt ut labore.</p>
+                    </div> <!-- single courses -->
+                </div>
+                <div class="col-md-4">
+                    <div class="single_courses mt-30">
+                        <img src="assets/images/courses-3.jpg" alt="courses">
+                        <h4 class="title"><a href="javascript:void(0)">Yoga & Meditation</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consetetur thedn bsadipscing elitr, sedsd diam nonumy eirmod tempor invidunt ut labore.</p>
+                    </div> <!-- single courses -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== COURSES PART ENDS ======-->
+    
+    <!--====== ABOUT PART START ======-->
+    
+    <section id="about" class="about_area pt-115 pb-120">
+        <div class="about_wrapper">
+        <div class="about_bg bg_cover d-none d-lg-block" style="background-image: url(assets/images/about.jpg)"></div>
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="col-lg-10">
+                        <div class="about_content">
+                            <h2 class="about_title">30 YEARS OF EXPERIENCE</h2>
+
+                            <div class="about_content_wrapper">
+                                <div class="section_title">
+                                    <span class="line"></span>
+                                    <h3 class="title">Learn More About Us</h3>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitsed nonumy eirmod tempor invidunt ut labore et dolore  accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, nosea takisa nctus est Lorem ipsudolor sit amet. Lorem ipsum dolor sit ame consete est Lorem ipsudolor sit amet. Lorem ipsum dolor sit amet, consete sadipscing elitr, sed diam nonumy eirmod tempor. </p>
+                                </div> <!-- section title -->
+                                <a href="javascript:void(0)" class="main-btn">Read More</a>
+                            </div> <!-- about content wrapper -->
+                        </div> <!-- about content -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- about wrapper -->
+    </section>
+    
+    <!--====== ABOUT PART ENDS ======-->
+    
+    <!--====== COUNTER PART START ======-->
+    
+    <!-- <section id="counter" class="counter_area pt-70 pb-120 bg_cover" style="background-image: url(assets/images/counter_bg.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="single_counter text-center mt-40">
+                        <i class="lni lni-users"></i>
+                        <span class="count counter">5345</span>
+                        <p>Satisfied Trainee</p>
+                    </div> <!-- single counter -->
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="single_counter text-center mt-40">
+                        <i class="lni lni-thumbs-up"></i>
+                        <span class="count counter">345</span>
+                        <p>Courses Completed</p>
+                    </div> <!-- single counter -->
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="single_counter text-center mt-40">
+                        <i class="lni lni-alarm-clock"></i>
+                        <span class="count counter">13</span>
+                        <p>Trainers</p>
+                    </div> <!-- single counter -->
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="single_counter text-center mt-40">
+                        <i class="lni lni-cup"></i>
+                        <span class="count counter">45</span>
+                        <p>Awards Won</p>
+                    </div> <!-- single counter -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section> -->
+    
+    <!--====== COUNTER PART ENDS ======-->
+    
+    <!--====== TEAM PART START ======-->
+    
+    <section id="team" class="team_area pt-105 pb-80">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="section_title text-center pb-55">
+                        <span class="line"></span>
+                        <h3 class="title">Our Team</h3>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_team text-center">
+                        <div class="team_image">
+                            <img src="assets/images/team-1.jpg" alt="team">
+                        </div>
+                        <div class="team_content">
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram-original"></i></a></li>
+                            </ul>
+                            <h5 class="team_name">Sarah Clerk</h5>
+                            <p>Fitness Trainer and CEO</p>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_team text-center">
+                        <div class="team_image">
+                            <img src="assets/images/team-2.jpg" alt="team">
+                        </div>
+                        <div class="team_content">
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram-original"></i></a></li>
+                            </ul>
+                            <h5 class="team_name">Nora F.</h5>
+                            <p>Fitness Trainer</p>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_team text-center">
+                        <div class="team_image">
+                            <img src="assets/images/team-3.jpg" alt="team">
+                        </div>
+                        <div class="team_content">
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram-original"></i></a></li>
+                            </ul>
+                            <h5 class="team_name">David Smith</h5>
+                            <p>Fitness Trainer</p>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_team text-center">
+                        <div class="team_image">
+                            <img src="assets/images/team-4.jpg" alt="team">
+                        </div>
+                        <div class="team_content">
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram-original"></i></a></li>
+                            </ul>
+                            <h5 class="team_name">Jesika Parnendaj</h5>
+                            <p>Fitness Trainer</p>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== TEAM PART ENDS ======-->
+    
+    
+    
+    <!--====== CONTACT PART START ======-->
+    
+    <section id="contact" class="contact_area ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact_form pt-105 pb-120">
+                        <div class="section_title pb-25">
+                            <span class="line"></span>
+                            <h3 class="title">Get in Touch</h3>
+                        </div> <!-- section title -->
+                        <form id="contact-form" action="assets/contact.php" method="post">
+                            <div class="single_form">
+                                <input type="text" name="name" placeholder="Name">
+                            </div> <!-- single form -->
+                            <div class="single_form">
+                                <input type="text" name="email" placeholder="Email">
+                            </div> <!-- single form -->
+                            <div class="single_form">
+                                <input type="text" name="subject" placeholder="Subject">
+                            </div> <!-- single form -->
+                            <div class="single_form">
+                                <textarea name="message" placeholder="Message"></textarea>
+                            </div> <!-- single form -->
+                            <p class="form-message"></p>
+                            <div class="single_form">
+                                <button class="main-btn">SUBMIT</button>
+                            </div> <!-- single form -->
+                        </form>
+                    </div> <!-- contact form -->
+                </div>
+            </div>  <!-- row -->
+        </div> <!-- container -->
+        
+        <div class="contact_map">
+            <div class="gmap_canvas">                            
+                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+        </div> <!-- contact map -->
+    </section>
+    
+    <!--====== CONTACT PART ENDS ======-->
+    
+    <!--====== FOOTER PART START ======-->
+    
+    <section id="footer" class="footer_area">
+        <div class="footer_widget pt-70 pb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="footer_info mt-45">
+                            <h4 class="footer_title">Contact</h4>
+                            <ul class="info">
+                                <li>Phone: 093826715212</li>
+                                <li>Email: hello@gamil.com</li>
+                                <li>Location: Jackson Heights, New York, USA</li>
+                            </ul>
+                        </div> <!-- footer info -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="footer_link mt-45">
+                            <h4 class="footer_title">Course</h4>
+                            <ul class="link">
+                                <li><a href="javascript:void(0)">Fitness</a></li>
+                                <li><a href="javascript:void(0)">Body Building</a></li>
+                                <li><a href="javascript:void(0)">Yoga & Meditation</a></li>
+                                <li><a href="javascript:void(0)">Registration</a></li>
+                            </ul>
+                        </div> <!-- footer info -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="footer_link mt-45">
+                            <h4 class="footer_title">Quick Link</h4>
+                            <ul class="link">
+                                <li><a href="javascript:void(0)">Home</a></li>
+                                <li><a href="javascript:void(0)">Courses</a></li>
+                                <li><a href="javascript:void(0)">About</a></li>
+                                <li><a href="javascript:void(0)">Schedules</a></li>
+                            </ul>
+                        </div> <!-- footer info -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="footer_social mt-45">
+                            <h4 class="footer_title">Follow Us On</h4>
+                            <ul class="social">
+                                <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-instagram-original"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div> <!-- footer info -->
+                    </div>
+                </div>  <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- footer widget -->
+        
+       
+    </section>
+    
+    <!--====== FOOTER PART ENDS ======-->
+    
+    <!--====== BACK TOP TOP PART START ======-->
+
+    <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
+
+    <!--====== BACK TOP TOP PART ENDS ======-->
+    
+    <!--====== PART START ======-->
+    
+<!--
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-"></div>
+            </div>
+        </div>
+    </section>
+-->
+    
+    <!--====== PART ENDS ======-->
+
+
+
+
+
+
+
+    <!--====== Jquery js ======-->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.4.5.2.min.js"></script>
+    
+    <!--====== Slick js ======-->
+    <script src="assets/js/slick.min.js"></script>
+    
+    <!--====== Ajax Contact js ======-->
+    <script src="assets/js/ajax-contact.js"></script>
+    
+    <!--====== Counter Up js ======-->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    
+    <!--====== Magnific Popup js ======-->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    
+    <!--====== Scrolling Nav js ======-->
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+    
+</body>
+
 </html>
+
